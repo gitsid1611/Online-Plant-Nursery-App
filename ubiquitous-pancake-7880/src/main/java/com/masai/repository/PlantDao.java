@@ -10,6 +10,8 @@ import com.masai.model.Plant;
 @Repository
 public interface PlantDao extends JpaRepository<Plant, Integer> {
 
+//	List<Plant> findbyname(String commonName);
+
 //    public List<Plant> findByCommonName(String commonName);
 //	
 //	public List<Plant> findByTypeOfPlant(String typeOfPlant);
