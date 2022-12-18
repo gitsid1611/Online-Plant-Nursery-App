@@ -1,9 +1,13 @@
 package com.masai.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -36,14 +40,21 @@ public class Plant {
 	private Integer plantCost;
 	
 	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Planter planter;
+	
+	
 	public Plant() {
 		// TODO Auto-generated constructor stub
 	}
 
 
+	
+
 	public Plant(Integer plantId, Integer plantHeight, String plantSpread, String commonName, String bloomTime,
 			String medicinalOrCulinaryUse, String difficultyLevel, String temparature, String typeOfPlant,
-			String plantDescription, Integer plantStock, Integer plantCost) {
+			String plantDescription, Integer plantStock, Integer plantCost, Planter planter) {
 		super();
 		this.plantId = plantId;
 		this.plantHeight = plantHeight;
@@ -57,7 +68,10 @@ public class Plant {
 		this.plantDescription = plantDescription;
 		this.plantStock = plantStock;
 		this.plantCost = plantCost;
+		this.planter = planter;
 	}
+
+
 
 
 	public Integer getPlantId() {
@@ -180,14 +194,33 @@ public class Plant {
 	}
 
 
+	
+
+
+	public Planter getPlanter() {
+		return planter;
+	}
+
+
+
+
+	public void setPlanter(Planter planter) {
+		this.planter = planter;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "Plant [plantId=" + plantId + ", plantHeight=" + plantHeight + ", plantSpread=" + plantSpread
 				+ ", commonName=" + commonName + ", bloomTime=" + bloomTime + ", medicinalOrCulinaryUse="
 				+ medicinalOrCulinaryUse + ", difficultyLevel=" + difficultyLevel + ", temparature=" + temparature
 				+ ", typeOfPlant=" + typeOfPlant + ", plantDescription=" + plantDescription + ", plantStock="
-				+ plantStock + ", plantCost=" + plantCost + "]";
+				+ plantStock + ", plantCost=" + plantCost + ", planter=" + planter + "]";
 	}
+
+
 	
 	
 
