@@ -5,8 +5,7 @@
 
 Backend of online Management where customer can buy planters, plants and seeds.
 
-Er Diagram >
-[images/ER-Nursery.png](https://github.com/gitsid1611/ubiquitous-pancake-7880/blob/main/images/ER-Nursery.png)
+![ERDiagram](https://github.com/gitsid1611/ubiquitous-pancake-7880/blob/main/images/ER-Nursery.png)
 
 
 . After running this program in spring boot we have to hit this url to see all the API's in swagger 
